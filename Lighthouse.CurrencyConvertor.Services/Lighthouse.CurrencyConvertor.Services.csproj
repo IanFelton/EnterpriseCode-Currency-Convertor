@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{676FC9C2-37A3-4A0C-9C89-4C280FC6861D}</ProjectGuid>
+    <ProjectGuid>{A2147CC5-5490-4C01-8C41-E65A698C291C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LighthouseCurrencyConvertor.Data</RootNamespace>
-    <AssemblyName>LighthouseCurrencyConvertor.Data</AssemblyName>
+    <RootNamespace>Lighthouse.CurrencyConvertor.Services</RootNamespace>
+    <AssemblyName>Lighthouse.CurrencyConvertor.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,7 +57,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExchangeRates.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -69,12 +68,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExchangeRateService.cs" />
+    <Compile Include="IExchangeRateService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lighthouse.CurrencyConvertor.Model\Lighthouse.CurrencyConvertor.Model.csproj">
       <Project>{9fac2a85-3f3a-4e7d-aee5-c372d2d9053a}</Project>
       <Name>Lighthouse.CurrencyConvertor.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LighthouseCurrencyConvertor.Data\Lighthouse.CurrencyConvertor.Data.csproj">
+      <Project>{676fc9c2-37a3-4a0c-9c89-4c280fc6861d}</Project>
+      <Name>Lighthouse.CurrencyConvertor.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -90,9 +95,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57473</DevelopmentServerPort>
+          <DevelopmentServerPort>57470</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:57473/</IISUrl>
+          <IISUrl>http://localhost:57470/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

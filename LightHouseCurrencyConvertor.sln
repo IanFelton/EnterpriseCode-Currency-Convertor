@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouse.CurrencyConvertor.Web", "LightHouseCurrencyConvertor\LightHouse.CurrencyConvertor.Web.csproj", "{73A154E6-60C0-441B-85AC-66A544E88279}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightHouse.CurrencyConvertor.Web", "LightHouse.CurrencyConvertor.Web\LightHouse.CurrencyConvertor.Web.csproj", "{73A154E6-60C0-441B-85AC-66A544E88279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConvertor.Services", "Currency.Services\Lighthouse.CurrencyConvertor.Services.csproj", "{A2147CC5-5490-4C01-8C41-E65A698C291C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConvertor.Services", "Lighthouse.CurrencyConvertor.Services\Lighthouse.CurrencyConvertor.Services.csproj", "{A2147CC5-5490-4C01-8C41-E65A698C291C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConvertor.Data", "LighthouseCurrencyConvertor.Data\Lighthouse.CurrencyConvertor.Data.csproj", "{676FC9C2-37A3-4A0C-9C89-4C280FC6861D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConvertor.Data", "Lighthouse.CurrencyConvertor.Data\Lighthouse.CurrencyConvertor.Data.csproj", "{676FC9C2-37A3-4A0C-9C89-4C280FC6861D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConvertor.Model", "Lighthouse.CurrencyConvertor.Model\Lighthouse.CurrencyConvertor.Model.csproj", "{9FAC2A85-3F3A-4E7D-AEE5-C372D2D9053A}"
 EndProject
