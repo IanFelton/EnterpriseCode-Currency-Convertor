@@ -7,9 +7,9 @@ namespace Lighthouse.CurrencyConvertor.Model
 {
     public class ExchangeRate
     {
-        string CurrencyFrom;
-        string CurrencyTo;
-        float Rate;
-        DateTime Date;
+        public string CurrencyFrom;
+        public string CurrencyTo;
+        public double Rate;
+        public DateTime Date;
     }
 }

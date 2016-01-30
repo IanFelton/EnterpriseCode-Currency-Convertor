@@ -10,7 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using LightHouseCurrencyConvertor.Models;
 
-namespace LightHouseCurrencyConvertor
+namespace Lighthouse.CurrencyConvertor.Web
 {
     public partial class Startup
     {

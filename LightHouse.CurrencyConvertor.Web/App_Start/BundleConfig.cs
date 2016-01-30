@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace LightHouseCurrencyConvertor
+namespace Lighthouse.CurrencyConvertor.Web
 {
     public class BundleConfig
     {

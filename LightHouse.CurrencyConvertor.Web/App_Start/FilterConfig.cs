@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace LightHouseCurrencyConvertor
+namespace Lighthouse.CurrencyConvertor.Web
 {
     public class FilterConfig
     {

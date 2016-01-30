@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(LightHouseCurrencyConvertor.Startup))]
+[assembly: OwinStartup(typeof(Lighthouse.CurrencyConvertor.Web.Startup))]
 
-namespace LightHouseCurrencyConvertor
+namespace Lighthouse.CurrencyConvertor.Web
 {
     public partial class Startup
     {

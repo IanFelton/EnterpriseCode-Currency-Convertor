@@ -9,7 +9,6 @@ using System.Web.Http;
 
 namespace LightHouseCurrencyConvertor.Controllers
 {
-    [Authorize]
     public class ExchangeRateController : ApiController
     {
 
