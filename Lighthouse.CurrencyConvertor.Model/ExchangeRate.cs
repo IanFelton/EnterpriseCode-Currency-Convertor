@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace Lighthouse.CurrencyConvertor.Model
 {
     public class ExchangeRate
     {
-        public string CurrencyFrom;
-        public string CurrencyTo;
-        public double Rate;
+        [JsonProperty("base")]
+        public string Base;
+        [JsonProperty("rates")]
+        public Dictionary<string,string> Rates;
+        [JsonProperty("date")]
         public DateTime Date;
     }
 }

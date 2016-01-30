@@ -1,26 +1,31 @@
 ﻿<div ng-app="ExchangeRateApp">
     <div ng-controller="ExchangeRateCtrl">
-        <div class="jumbotron">
-            <h1>Lighthouse Currency Convertor</h1>
-            <p class="lead">Make Millions on the FOREX with this app.</p>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <h2>From</h2>
-                <p>Money amount and currency type to convert from</p>
-                <p></p>
+        <form name="myForm">
+            <div class="jumbotron">
+                <h1>Lighthouse Currency Convertor</h1>
+                <p class="lead">Make Millions on the FOREX with this app.</p>
             </div>
-            <div class="col-md-4">
-                <h2>To</h2>
-                <p>Currency type to convert to</p>
-                <p></p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>From</h2>
+                    <p>Money amount and currency type to convert from</p>
+                    <p><label for="repeatSelect"> From: </label>
+                    <select name="repeatSelect" id="repeatSelect" ng-model="to">
+                        <option ng-repeat="option in response" value="{{option.base}}">{{option.base}}</option>
+                    </select></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>To</h2>
+                    <p>Currency type to convert to</p>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Result</h2>
+                    <p>{{result}}</p>
+                    <p>REMEBER TO SHOW ERRORS and FEED DATE</p>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h2>Result</h2>
-                <p>{{result}}</p>
-                <p>REMEBER TO SHOW ERRORS and FEED DATE</p>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 

@@ -1,16 +1,15 @@
 ﻿using Lighthouse.CurrencyConvertor.Model;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Currency.Services
+namespace Lighthouse.CurrencyConvertor.Data
 {
-    public interface IExchangeRateService
+    public interface IRateRepository : IDisposable
     {
-        void UpdateRates(IEnumerable<ExchangeRate> rates);
         dynamic GetRates();
+        void SaveRates(IEnumerable<ExchangeRate> rates);
     }
 }

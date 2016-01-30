@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
@@ -75,9 +79,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -242,6 +243,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lighthouse.CurrencyConvertor.Data\Lighthouse.CurrencyConvertor.Data.csproj">
+      <Project>{676fc9c2-37a3-4a0c-9c89-4c280fc6861d}</Project>
+      <Name>Lighthouse.CurrencyConvertor.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lighthouse.CurrencyConvertor.Services\Lighthouse.CurrencyConvertor.Services.csproj">
       <Project>{a2147cc5-5490-4c01-8c41-e65a698c291c}</Project>
       <Name>Lighthouse.CurrencyConvertor.Services</Name>

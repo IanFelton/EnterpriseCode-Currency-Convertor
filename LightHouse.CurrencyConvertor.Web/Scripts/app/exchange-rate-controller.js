@@ -3,14 +3,15 @@
         $scope.to = '';
         $scope.from = '';
         $scope.amount = 0.0;
+        $scope.rates;
         $scope.exchangeRates = [];
-
+        $scope.response;
         $scope.result = function () {
             return 0;
         };
 
         $http.get("/api/exchangerate").success(function (data, status, headers, config) {
-            $scope.exchangeRates = data.options;
+            $scope.response = data.results;
         }).error(function (data, status, headers, config) {
             $scope.message = "Oops... something went wrong";
         });

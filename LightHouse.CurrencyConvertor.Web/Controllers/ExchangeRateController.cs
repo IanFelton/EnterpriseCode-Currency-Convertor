@@ -12,7 +12,7 @@ namespace LightHouseCurrencyConvertor.Controllers
     public class ExchangeRateController : ApiController
     {
 
-        private IExchangeRateService exchangeRateService;
+        private readonly IExchangeRateService exchangeRateService;
 
         public ExchangeRateController(IExchangeRateService exchangeRateService)
         {
@@ -20,7 +20,7 @@ namespace LightHouseCurrencyConvertor.Controllers
         }
 
         // GET api/values/5
-        public IEnumerable<ExchangeRate> Get()
+        public dynamic Get()
         {
             return exchangeRateService.GetRates();
         }

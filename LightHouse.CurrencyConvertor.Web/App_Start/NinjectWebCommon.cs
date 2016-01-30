@@ -11,6 +11,7 @@ namespace Lighthouse.CurrencyConvertor.Web.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Currency.Services;
+    using Lighthouse.CurrencyConvertor.Data;
 
     public static class NinjectWebCommon 
     {
@@ -63,6 +64,7 @@ namespace Lighthouse.CurrencyConvertor.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IExchangeRateService>().To<ExchangeRateService>();
+            kernel.Bind<IRateRepository>().To<RateRepository>();
         }        
     }
 }
