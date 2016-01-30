@@ -3,8 +3,6 @@
         $scope.to = '';
         $scope.from = '';
         $scope.amount = 0.0;
-        $scope.rates;
-        $scope.exchangeRates = [];
         $scope.response;
         $scope.result = function () {
             return 0;
