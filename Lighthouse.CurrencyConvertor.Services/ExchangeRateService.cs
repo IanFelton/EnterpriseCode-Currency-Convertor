@@ -16,12 +16,12 @@ namespace Currency.Services
             this.rateRepository = rateRepository;
         }
 
-        void IExchangeRateService.UpdateRates(IEnumerable<ExchangeRate> rates)
+        void IExchangeRateService.UpdateRates(Feed rates)
         {
- 	        throw new NotImplementedException();
+            rateRepository.SaveRates(rates);
         }
 
-        dynamic IExchangeRateService.GetRates()
+        Feed IExchangeRateService.GetRates()
         {
             return rateRepository.GetRates();
         }

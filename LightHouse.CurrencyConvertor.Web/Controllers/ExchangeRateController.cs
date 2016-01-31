@@ -26,7 +26,7 @@ namespace LightHouseCurrencyConvertor.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]IEnumerable<ExchangeRate> value)
+        public void Post([FromBody]Feed value)
         {
             exchangeRateService.UpdateRates(value);
         }

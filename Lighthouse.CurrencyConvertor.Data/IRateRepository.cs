@@ -9,7 +9,7 @@ namespace Lighthouse.CurrencyConvertor.Data
 {
     public interface IRateRepository : IDisposable
     {
-        dynamic GetRates();
-        void SaveRates(IEnumerable<ExchangeRate> rates);
+        Feed GetRates();
+        void SaveRates(Feed rates);
     }
 }

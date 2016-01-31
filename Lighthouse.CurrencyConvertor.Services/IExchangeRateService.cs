@@ -10,7 +10,7 @@ namespace Currency.Services
 {
     public interface IExchangeRateService
     {
-        void UpdateRates(IEnumerable<ExchangeRate> rates);
-        dynamic GetRates();
+        void UpdateRates(Feed rates);
+        Feed GetRates();
     }
 }

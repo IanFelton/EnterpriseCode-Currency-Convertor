@@ -1,5 +1,6 @@
 ﻿using Lighthouse.CurrencyConvertor.Model;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,20 +13,29 @@ namespace Lighthouse.CurrencyConvertor.Data
     public class RateRepository : IRateRepository
     {
 
-        dynamic IRateRepository.GetRates()
+        Feed IRateRepository.GetRates()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             using (StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("Lighthouse.CurrencyConvertor.Data.ExchangeRates.json")))
             {
-                dynamic rates = JsonConvert.DeserializeObject<dynamic>(sr.ReadToEnd());
+                Feed rates = JsonConvert.DeserializeObject<Feed>(sr.ReadToEnd());
                 return rates;
             }
-            
+
         }
 
-        void IRateRepository.SaveRates(IEnumerable<Model.ExchangeRate> rates)
+        void IRateRepository.SaveRates(Feed rates)
         {
-            throw new NotImplementedException();
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Converters.Add(new JavaScriptDateTimeConverter());
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+            Assembly assembly = Assembly.GetExecutingAssembly();
+
+            using (StreamWriter sw = new StreamWriter(assembly.GetManifestResourceStream("Lighthouse.CurrencyConvertor.Data.ExchangeRates.json")))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, rates);
+            }
         }
 
         void IDisposable.Dispose()
