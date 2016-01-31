@@ -7,20 +7,35 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <h2>From</h2>
-                    <p>Money amount and currency type to convert from</p>
-                    <p><label for="repeatSelect"> From: </label>
-                    <select name="repeatSelect" id="repeatSelect" ng-model="to">
-                        <option ng-repeat="option in response" value="{{option.base}}">{{option.base}}</option>
-                    </select></p>
+                    <div style="float:left">
+                        <p>
+                            <label for="repeatSelect">
+                                From:
+                                <select name="repeatSelect" id="repeatSelect" ng-model="from" ng-change="countries()">
+                                    <option ng-repeat="option in response" value="{{option.base}}">{{option.base}}</option>
+                                </select>
+                            </label>
+                        </p>
+                        </div>
+                    <div>
+                        <p>
+                            <label for="repeatSelect">
+                                To:
+                                <select name="repeatSelect" id="repeatSelect" ng-model="to" ng-change="setRate()">
+                                    <option ng-repeat="(key, value) in toCountries" value="{{key}}">{{key}}</option>
+                                </select>
+                            </label>
+                        </p>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h2>To</h2>
-                    <p>Currency type to convert to</p>
-                    <p></p>
+                    <label>Amount
+                        <input type="text" name="amount" ng-model="amount" required>
+                    </label>
+                    <button ng-click="calculate()">Calculate</button>
                 </div>
                 <div class="col-md-4">
-                    <h2>Result</h2>
+                    <label>Result</label>
                     <p>{{result}}</p>
                     <p>REMEBER TO SHOW ERRORS and FEED DATE</p>
                 </div>
@@ -31,5 +46,6 @@
 
 @section scripts {
     @Scripts.Render("~/Scripts/angular.js")
+    @Scripts.Render("~/Scripts/app/exchange-rate-service.js")
     @Scripts.Render("~/Scripts/app/exchange-rate-controller.js")
 }

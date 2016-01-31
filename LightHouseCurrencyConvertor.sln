@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConverto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConvertor.Model", "Lighthouse.CurrencyConvertor.Model\Lighthouse.CurrencyConvertor.Model.csproj", "{9FAC2A85-3F3A-4E7D-AEE5-C372D2D9053A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.CurrencyConvertor.UnitTests", "Lighthouse.CurrencyConvertor.UnitTests\Lighthouse.CurrencyConvertor.UnitTests.csproj", "{A012FA01-6C82-45CD-B651-4C44CF0E1D10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9FAC2A85-3F3A-4E7D-AEE5-C372D2D9053A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FAC2A85-3F3A-4E7D-AEE5-C372D2D9053A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FAC2A85-3F3A-4E7D-AEE5-C372D2D9053A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A012FA01-6C82-45CD-B651-4C44CF0E1D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A012FA01-6C82-45CD-B651-4C44CF0E1D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A012FA01-6C82-45CD-B651-4C44CF0E1D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A012FA01-6C82-45CD-B651-4C44CF0E1D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

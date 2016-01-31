@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>0fd1c492-6e6c-4fd2-8803-74e44780d804</ProjectGuid>
+    <ProjectGuid>{A012FA01-6C82-45CD-B651-4C44CF0E1D10}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lighthouse.CurrencyConvertor.UnitTests</RootNamespace>
