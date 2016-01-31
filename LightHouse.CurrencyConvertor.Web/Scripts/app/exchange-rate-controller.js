@@ -32,5 +32,6 @@
         $scope.convert = function () {
             $scope.result = exchangeRates.convert($scope.amount, $scope.rate);
             $scope.date = exchangeRates.feedDate($scope.response, $scope.from);
+            $scope.symbol = $scope.to;
         }
     }]);
