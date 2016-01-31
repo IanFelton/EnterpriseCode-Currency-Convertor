@@ -1,4 +1,4 @@
-﻿angular.module('ExchangeRateApp', ['exchange-rate-service'])
+﻿angular.module('ExchangeRateApp', ['exchange-rate-service', 'ngMessages'])
     .controller('ExchangeRateCtrl', ['exchangeRates', '$scope', function (exchangeRates, $scope) {
 
         $scope.success = false;

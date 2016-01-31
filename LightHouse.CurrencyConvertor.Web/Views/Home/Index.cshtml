@@ -1,52 +1,60 @@
-﻿<div ng-app="ExchangeRateApp">
+﻿<style>
+    .select {
+        width: 5em;
+    }
+</style>
+<div ng-app="ExchangeRateApp">
     <div ng-controller="ExchangeRateCtrl">
-        <form name="myForm">
-            <div class="jumbotron">
-                <h1>Lighthouse Currency Convertor</h1>
-                <p class="lead">Make millions on the FOREX with this app.</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div style="float:left">
-                        <p>
-                            <label for="repeatSelect">
-                                From:
-                                <select name="repeatSelect" id="repeatSelect" ng-model="from" ng-change="getToCountries()">
-                                    <option ng-repeat="option in response" value="{{option.base}}">{{option.base}}</option>
-                                </select>
-                            </label>
-                        </p>
-                        </div>
-                    <div>
-                        <p>
-                            <label for="repeatSelect">
-                                To:
-                                <select name="repeatSelect" id="repeatSelect" ng-model="to" ng-change="setRate()">
-                                    <option ng-repeat="(key, value) in toCountries" value="{{key}}">{{key}}</option>
-                                </select>
-                            </label>
-                        </p>
+        <div class="jumbotron">
+            <h1>Lighthouse Currency Convertor</h1>
+            <p class="lead">Make millions on the FOREX with this app.</p>
+        </div>
+        <div class="row">
+            <div>
+                <form name="convertForm" class="form-inline">
+                    <div class="form-group">
+                        <label for="repeatSelect">
+                            From
+                            <select name="repeatSelect" id="repeatSelect" ng-model="from" ng-change="getToCountries()" class="select" required>
+                                <option value="">--Select--</option>
+                                <option ng-repeat="option in response" value="{{option.base}}">{{option.base}}</option>
+                            </select>
+                        </label>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <label>Amount
-                        <input type="text" name="amount" ng-model="amount" required>
-                    </label>
+                    <div class="form-group">
+                        <label for="repeatSelect">
+                            To
+                            <select name="repeatSelect" id="repeatSelect" ng-model="to" ng-change="setRate()" class="select" required>
+                                <option value="">--Select--</option>
+                                <option ng-repeat="(key, value) in toCountries" value="{{key}}">{{key}}</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label>
+                                Amount to nearest whole dollar
+                                <input type="number" name="amount" ng-model="amount" required>
+                            </label>
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
                     <button ng-click="convert()">convert</button>
-                </div>
-                <div class="col-md-4">
+                    
+                </form>
+                <div >
                     <label>Result</label>
-                    <p>{{result}}</p>
+                    <p>{{result | currency: to : 2 }}</p>
                     <p>Rates are accurate as of {{date}}</p>
-                    <p>REMEBER TO SHOW ERRORS</p>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
 @section scripts {
     @Scripts.Render("~/Scripts/angular.js")
+@Scripts.Render("~/Scripts/angular-messages.js")
     @Scripts.Render("~/Scripts/app/exchange-rate-service.js")
     @Scripts.Render("~/Scripts/app/exchange-rate-controller.js")
 }
