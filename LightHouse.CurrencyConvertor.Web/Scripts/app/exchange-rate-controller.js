@@ -3,17 +3,16 @@
 
         $scope.success = false;
         $scope.error = false;
-
-        $scope.to = '';
-        $scope.from = '';
-        $scope.amount = 0.0;
+        $scope.to;
+        $scope.from;
+        $scope.amount;
         $scope.result;
 
-        var getData = exchangeRates.getRateData();
-
+        var getData = exchangeRates.getRates();
         getData.then(
             function (results) {
                 $scope.response = results.data.results;
+                
                 $scope.success = true;
             },
             function (error) {
@@ -22,24 +21,16 @@
 
             });
 
-        $scope.countries = function () {
-            $.each($scope.response, function (i, v) {
-                if (v.base == $scope.from) {
-                    $scope.toCountries = v.rates;
-                }
-            });
+        $scope.getToCountries = function () {
+            $scope.toCountries = exchangeRates.getRatesForCountry($scope.response, $scope.from);
         }
 
         $scope.setRate = function () {
-            $.each($scope.toCountries, function (i, v) {
-                if (i == $scope.to) {
-                    $scope.rate = v;
-                }
-            });
+            $scope.rate = exchangeRates.setRate($scope.toCountries, $scope.to)
         }
 
-        $scope.calculate = function () {
-            $scope.result = $scope.amount * $scope.rate;
+        $scope.convert = function () {
+            $scope.result = exchangeRates.convert($scope.amount, $scope.rate);
+            $scope.date = exchangeRates.feedDate($scope.response, $scope.from);
         }
-
     }]);

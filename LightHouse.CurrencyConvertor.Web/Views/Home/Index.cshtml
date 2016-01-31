@@ -3,7 +3,7 @@
         <form name="myForm">
             <div class="jumbotron">
                 <h1>Lighthouse Currency Convertor</h1>
-                <p class="lead">Make Millions on the FOREX with this app.</p>
+                <p class="lead">Make millions on the FOREX with this app.</p>
             </div>
             <div class="row">
                 <div class="col-md-4">
@@ -11,7 +11,7 @@
                         <p>
                             <label for="repeatSelect">
                                 From:
-                                <select name="repeatSelect" id="repeatSelect" ng-model="from" ng-change="countries()">
+                                <select name="repeatSelect" id="repeatSelect" ng-model="from" ng-change="getToCountries()">
                                     <option ng-repeat="option in response" value="{{option.base}}">{{option.base}}</option>
                                 </select>
                             </label>
@@ -32,12 +32,13 @@
                     <label>Amount
                         <input type="text" name="amount" ng-model="amount" required>
                     </label>
-                    <button ng-click="calculate()">Calculate</button>
+                    <button ng-click="convert()">convert</button>
                 </div>
                 <div class="col-md-4">
                     <label>Result</label>
                     <p>{{result}}</p>
-                    <p>REMEBER TO SHOW ERRORS and FEED DATE</p>
+                    <p>Rates are accurate as of {{date}}</p>
+                    <p>REMEBER TO SHOW ERRORS</p>
                 </div>
             </div>
         </form>
