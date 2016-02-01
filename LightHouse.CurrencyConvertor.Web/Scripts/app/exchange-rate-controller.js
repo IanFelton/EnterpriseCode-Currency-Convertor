@@ -1,4 +1,4 @@
-﻿angular.module('ExchangeRateApp', ['exchange-rate-service', 'ngMessages'])
+﻿angular.module('ExchangeRateApp', ['ExchangeRateService', 'ngMessages'])
     .controller('ExchangeRateCtrl', ['exchangeRates', '$scope', function (exchangeRates, $scope) {
 
         $scope.success = false;
@@ -8,11 +8,10 @@
         $scope.amount;
         $scope.result;
 
-        var getData = exchangeRates.getRates();
-        getData.then(
+        exchangeRates.getRates()
+            .then(
             function (results) {
                 $scope.response = results.data.results;
-                
                 $scope.success = true;
             },
             function (error) {

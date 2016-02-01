@@ -1,4 +1,4 @@
-﻿angular.module('exchange-rate-service', [])
+﻿angular.module('ExchangeRateService', [])
     .service('exchangeRates', ['$http', '$q', function ($http, $q) {
         var deferObject,
         getRateData = {
